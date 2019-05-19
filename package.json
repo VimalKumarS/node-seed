@@ -1,0 +1,49 @@
+{
+  "name": "node-seed",
+  "version": "1.0.0",
+  "description": "node seed",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "local": "cross-env FORCE_COLOR=1 NODE_PATH=. NODE_ENV=dev nodemon ./server/app.js",
+    "dev": "cross-env NODE_PATH=. NODE_ENV=dev node ./server/app.js",
+    "uat": "cross-env NODE_PATH=. NODE_ENV=uat node ./server/app.js",
+    "stg": "cross-env NODE_PATH=. NODE_ENV=stg node ./server/app.js",
+    "prd": "cross-env NODE_PATH=. NODE_ENV=prd node ./server/app.js"
+  },
+  "author": "vimal kumar",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chalk": "^2.4.2",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "cross-env": "^5.2.0",
+    "express": "^4.17.0",
+    "express-correlation-id": "^1.3.0",
+    "express-validation": "^1.0.2",
+    "joi": "^14.3.1",
+    "method-override": "^3.0.0",
+    "morgan": "^1.9.1",
+    "morgan-json": "^1.1.0",
+    "mysql2": "^1.6.5",
+    "nodemon": "^1.19.0",
+    "os": "^0.1.1",
+    "rotating-file-stream": "^1.4.1",
+    "sequelize": "^5.8.6",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^3.9.0"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": "2500",
+    "env": {
+      "NODE_ENV": "local",
+      "PORT": 4000
+    }
+  }
+}

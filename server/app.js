@@ -36,6 +36,7 @@ app.use(methodOverride());
 
 app.use((req, res, next) => {
   res.r = (result) => {
+    res.set('x-correlation-id', req.correlationId())
     res.json({
       isSuccess: true,
       status: 200,
